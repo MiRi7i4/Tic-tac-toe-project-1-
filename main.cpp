@@ -23,60 +23,63 @@ int main() {
         cin >> inp;
         system("cls");
         switch (inp) {
-            case '1':
-                if (MoveCheck(Field, 0)) {
+        case '1':
+            if (MoveCheck(Field, 0)) {
                 Field[0] = Turn;
                 Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '2':
-                if (MoveCheck(Field, 1)) {
-                    Field[1] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '3':
-                if (MoveCheck(Field, 2)) {
-                    Field[2] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '4':
-                if (MoveCheck(Field, 3)) {
-                    Field[3] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '5':
-                if (MoveCheck(Field, 4)) {
-                    Field[4] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '6':
-                if (MoveCheck(Field, 5)) {
-                    Field[5] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '7':
-                if (MoveCheck(Field, 6)) {
-                    Field[6] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '8':
-                if (MoveCheck(Field, 7)) {
-                    Field[7] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
-            case '9':
-                if (MoveCheck(Field, 8)) {
-                    Field[8] = Turn;
-                    Turn = (Turn == 'X') ? 'O' : 'X';
-                }
-                break;
+            }
+            break;
+        case '2':
+            if (MoveCheck(Field, 1)) {
+                Field[1] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case '3':
+            if (MoveCheck(Field, 2)) {
+                Field[2] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case '4':
+            if (MoveCheck(Field, 3)) {
+                Field[3] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case '5':
+            if (MoveCheck(Field, 4)) {
+                Field[4] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case '6':
+            if (MoveCheck(Field, 5)) {
+                Field[5] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case '7':
+            if (MoveCheck(Field, 6)) {
+                Field[6] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case '8':
+            if (MoveCheck(Field, 7)) {
+                Field[7] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case '9':
+            if (MoveCheck(Field, 8)) {
+                Field[8] = Turn;
+                Turn = (Turn == 'X') ? 'O' : 'X';
+            }
+            break;
+        case 'H':
+            msg = "Play against your friend by typing commands one by one\nPut your sign by typing square's nuber\nMake 3 signs in a row to win\nYou may not choose taken square\nEnter command:";
+            break;
         }
     }
     return 0;
