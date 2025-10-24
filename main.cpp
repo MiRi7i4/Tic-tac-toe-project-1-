@@ -8,6 +8,7 @@ void print_screen(char* Ar);//Выводит игровое поле
 bool MoveCheck(char* Ar, int N);
 void CheckVictory(char *Ar, char T);
 
+short Drawmeter = 0;
 unsigned short score[]{0, 0};
 bool game = true;
 string msg = "Enter command: ";
@@ -84,6 +85,10 @@ int main() {
             break;
         }
         if (game) CheckVictory(Field, Turn);
+        if (Drawmeter > 8 && game) {
+            msg = "Draw! Restart to play again:";
+            game = false;
+        }
     }
     return 0;
 }
@@ -106,6 +111,7 @@ bool MoveCheck(char* Ar, int N){
         return false;
     }
     else if (Ar[N] != 'X' && Ar[N] != 'O') {
+        Drawmeter++;
         msg = "Enter command: ";
         return true;
     }else msg = "Please choose free space: ";
