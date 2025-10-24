@@ -84,7 +84,9 @@ int main() {
         case 'H':
             msg = "Play against your friend by typing commands one by one\nPut your sign by typing square's nuber\nMake 3 signs in a row to win\nYou may not choose taken square\nEnter command: ";
             break;
-        case 'R':
+        case 'R' or 'r':
+            Turn = 'X';
+            Drawmeter = 0;
             Restart(Field);
             break;
         default:
