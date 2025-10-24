@@ -7,6 +7,7 @@ using namespace std;
 void print_screen(char* Ar);//Выводит игровое поле
 bool MoveCheck(char* Ar, int N);
 void CheckVictory(char *Ar, char T);
+void Restart(char* Ar);
 
 short Drawmeter = 0;
 unsigned short score[]{0, 0};
@@ -81,12 +82,18 @@ int main() {
             }
             break;
         case 'H':
-            msg = "Play against your friend by typing commands one by one\nPut your sign by typing square's nuber\nMake 3 signs in a row to win\nYou may not choose taken square\nEnter command:";
+            msg = "Play against your friend by typing commands one by one\nPut your sign by typing square's nuber\nMake 3 signs in a row to win\nYou may not choose taken square\nEnter command: ";
+            break;
+        case 'R':
+            Restart(Field);
+            break;
+        default:
+            msg = "Invalid command. Please try again: ";
             break;
         }
         if (game) CheckVictory(Field, Turn);
         if (Drawmeter > 8 && game) {
-            msg = "Draw! Restart to play again:";
+            msg = "Draw! Restart to play again: ";
             game = false;
         }
     }
@@ -118,6 +125,16 @@ bool MoveCheck(char* Ar, int N){
     return false;
 }
 
+void Restart(char* Ar){
+    char Template[9] = {
+        '1', '2', '3',
+        '4', '5', '6',
+        '7', '8', '9' };
+    for (int i = 0; i < 9; i++) *(Ar + i) = Template[i];
+    msg = "Enter command: ";
+    game = true;
+}
+
 int WinCombos[8][3]{ 
     {0,1,2},{3,4,5},{6,7,8},{ 0,3,6 },{1,4,7},{2,5,8},{0,4,8},{6,4,2} 
     };
@@ -126,10 +143,10 @@ void CheckVictory(char *Ar, char T) {
         if (*(Ar + WinCombos[i][0]) == *(Ar + WinCombos[i][1]) && *(Ar + WinCombos[i][1]) == *(Ar + WinCombos[i][2])) {
             game = false;
             if (T == 'O') { 
-                msg = "X won! Type \"R\" to play again:"; 
+                msg = "X won! Type \"R\" to play again: "; 
                 score[0]++;
             }else { 
-                msg = "O won! Type \"R\" to play again:";
+                msg = "O won! Type \"R\" to play again: ";
                 score[1]++; 
             }
         }
